@@ -33,7 +33,24 @@ def check_login():
 
     # Check if the username and password are correct
     if username == "Haseena" and password == "123":
-        messagebox.showinfo("Login Successful", "Welcome, " + username + "!")
+        # Destroy the login window and create a new window with a welcome message
+        window.destroy()
+        welcome_window = Tk()
+        welcome_window.title("Welcome Page")
+        welcome_window.geometry("500x350")
+        welcome_window.config(bg="orange")
+        welcome_label = Label(welcome_window, text="Welcome, " + username + "!")
+        welcome_label.pack(padx=10, pady=10)
+        account_button = Button(welcome_window, text="Create an account")
+        account_button.pack(padx=10, pady=10)
+        withdraw_button = Button(welcome_window, text="Withdarw Cash")
+        withdraw_button.pack(padx=10, pady=10)
+        deposite_button = Button(welcome_window, text="Deposite Cash")
+        deposite_button.pack(padx=10, pady=10)
+        transfer_button = Button(welcome_window, text="Transfer from different accounts")
+        transfer_button.pack(padx=10, pady=10)
+        viewaccount_button = Button(welcome_window, text="View account details")
+        viewaccount_button.pack(padx=10, pady=10)
     else:
         messagebox.showerror("Login Error", "Incorrect username or password.")
 
