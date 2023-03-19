@@ -39,13 +39,13 @@ def check_login():
         welcome_window.title("Welcome Page")
         welcome_window.geometry("500x350")
         welcome_window.config(bg="orange")
-        welcome_label = Label(welcome_window, text="Welcome, " + username + "!")
+        welcome_label = Label(welcome_window, text="Welcome, " + username + "!", fg="red", font=("Helvetica", 16, "bold"))
         welcome_label.pack(padx=10, pady=10)
         account_button = Button(welcome_window, text="Create an account")
         account_button.pack(padx=10, pady=10)
-        withdraw_button = Button(welcome_window, text="Withdarw Cash")
+        withdraw_button = Button(welcome_window, text="Withdraw Cash", command=open_withdraw_page)
         withdraw_button.pack(padx=10, pady=10)
-        deposite_button = Button(welcome_window, text="Deposite Cash")
+        deposite_button = Button(welcome_window, text="Deposit Cash")
         deposite_button.pack(padx=10, pady=10)
         transfer_button = Button(welcome_window, text="Transfer from different accounts")
         transfer_button.pack(padx=10, pady=10)
@@ -53,6 +53,23 @@ def check_login():
         viewaccount_button.pack(padx=10, pady=10)
     else:
         messagebox.showerror("Login Error", "Incorrect username or password.")
+
+# define a function for withdraw money
+def open_withdraw_page():
+    # Create a new window for the withdraw page
+    withdraw_window = Toplevel()
+    withdraw_window.title("Withdraw Page")
+    withdraw_window.geometry("500x350")
+    
+    # Add widgets to the withdraw page
+    withdraw_label = Label(withdraw_window, text="Withdraw Money")
+    withdraw_label.pack(padx=10, pady=10)
+    amount_label = Label(withdraw_window, text="Enter amount:")
+    amount_label.pack(padx=10, pady=10)
+    amount_entry = Entry(withdraw_window)
+    amount_entry.pack(padx=10, pady=10)
+    withdraw_button = Button(withdraw_window, text="Withdraw")
+    withdraw_button.pack(padx=10, pady=10)
 
 # Create a button to submit the login credentials
 login_button = Button(window, text="Login", command=check_login)
