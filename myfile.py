@@ -61,6 +61,7 @@ def create_account():
     account_window = Toplevel()
     account_window.title("Create Account")
     account_window.geometry("500x350")
+    account_window.config(bg="violet")
     # Add widgets to the account creation page
     account_label = Label(account_window, text="Create Account")
     account_label.pack(padx=10, pady=10)
@@ -92,6 +93,7 @@ def open_withdraw_page():
     withdraw_window = Toplevel()
     withdraw_window.title("Withdraw Page")
     withdraw_window.geometry("500x350")
+    withdraw_window.config(bg="indigo")
 
     # Add widgets to the withdraw page
     withdraw_label = Label(withdraw_window, text="Withdraw Money")
@@ -115,6 +117,7 @@ def open_deposit_page():
     deposit_window = Toplevel()
     deposit_window.title("Deposit Page")
     deposit_window.geometry("500x350")
+    deposit_window.config(bg="blue")
     
     # Add widgets to the deposit page
     deposit_label = Label(deposit_window, text="Deposit Money")
@@ -140,6 +143,7 @@ def transfer_money():
     transfer_window = Toplevel()
     transfer_window.title("Transfer Page")
     transfer_window.geometry("500x350")
+    transfer_window.config(bg="orange")
 
     # Add widgets to the transfer page
     transfer_label = Label(transfer_window, text="Transfer Money")
@@ -177,6 +181,7 @@ def view_account_details():
     account_window = Toplevel()
     account_window.title("Account Details")
     account_window.geometry("300x200")
+    account_window.config(bg="red")
 
     # Create labels to display the account information
     for i, (key, value) in enumerate(account_info.items()):
